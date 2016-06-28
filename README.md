@@ -4,8 +4,8 @@
 
 # Как установить
 
-	git clone {{ссылка на репу}}
-	cd {{название репы}}
+	git clone git@github.com:strizhechenko/twitter_digital_suicide.git
+	cd twitter_digital_suicide
 	virtualenv env
 	. env/bin/activate
 	pip install -r requirements.txt
@@ -18,7 +18,7 @@
 
 ## Нужен APP в твиторе
 
-Зарегать апп в твиторе и авторизоваться в нём по доке: https://github.com/strizhechenko/twitterbot_example#%D0%90%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9
+Зарегать апп в твиторе и авторизоваться в нём по [доке](https://github.com/strizhechenko/twitterbot_example#%D0%90%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9)
 
 ## Удаляйте уже мои твиты
 
