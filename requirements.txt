@@ -1,2 +1,1 @@
-twitterbot-utils>=0.1.4
-APScheduler
+twitterbot-utils
