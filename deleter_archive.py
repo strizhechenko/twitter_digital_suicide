@@ -1,5 +1,6 @@
 # coding: utf-8
 import os
+import sys
 import json
 from zipfile import ZipFile
 from twitterbot_utils import Twibot
@@ -43,10 +44,15 @@ def main():
     archive = cwd + '/twitter.zip'
     output = cwd + '/output'
     ids = archive2ids(archive, output, cwd)
+    if len(sys.argv) > 1:
+        ids = [tweet_id for tweet_id in ids if tweet_id >= int(sys.argv[1])]
     for tweet_id in ids:
         print 'destroy', tweet_id
-        tweet = api.get_status(tweet_id)
-        tweet.destroy()
+        try:
+            tweet = api.get_status(tweet_id)
+            tweet.destroy()
+        except:
+            pass
 
 if __name__ == '__main__':
     main()
