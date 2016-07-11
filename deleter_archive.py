@@ -44,15 +44,20 @@ def main():
     archive = cwd + '/twitter.zip'
     output = cwd + '/output'
     ids = archive2ids(archive, output, cwd)
+
     if len(sys.argv) > 1:
-        ids = [tweet_id for tweet_id in ids if tweet_id >= int(sys.argv[1])]
+        last_tweet_id = int(sys.argv[1])
+        ids = [tweet_id for tweet_id in ids if tweet_id >= last_tweet_id]
+
     for tweet_id in ids:
         print 'destroy', tweet_id
         try:
             tweet = api.get_status(tweet_id)
             tweet.destroy()
-        except:
-            pass
+            with open('last_deleted_tweet_id') as last_tweet_file:
+                last_tweet_file.write(str(tweet_id))
+        except Exception as err:
+            print err
 
 if __name__ == '__main__':
     main()
